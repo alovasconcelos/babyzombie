@@ -5,6 +5,7 @@ using UnityEngine;
 public class Baby : MonoBehaviour
 {
     public AudioSource groan;
+    public AudioSource jump;
     private Rigidbody2D rigidBody;
     public float jumpValue;
     private bool isJumping = false;
@@ -53,6 +54,7 @@ public class Baby : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.layer == 3) {
             isJumping = true;
+            jump.Play();
         }
         
     }
